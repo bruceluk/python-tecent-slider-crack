@@ -21,7 +21,8 @@ def pre_process(img_path):
 
     _, binary = cv2.threshold(img_gray, 127, 255, cv2.THRESH_BINARY)  # 将灰度图像转成二值图像
 
-    contours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)  # 查找轮廓
+    _, contours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)  # 查找轮廓 cv3
+    #contours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)  # 查找轮廓 cv2
 
     rect_area = []
     rect_arc_length = []
